@@ -86,7 +86,7 @@ Layout styles
 	padding: 1em 1.25em;
 }
 
-.header-heading { margin: 0; }
+.header-heading { margin: 0; text-shadow: 2px 2px #505050;}
 
 .nav-bar
 {
