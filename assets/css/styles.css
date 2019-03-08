@@ -82,11 +82,11 @@ Layout styles
 .header
 {
 	color: #fff;
-	background: #999;
+	background: #333;
 	padding: 1em 1.25em;
 }
 
-.header-heading { margin: 0; text-shadow: 2px 2px #505050;}
+.header-heading { margin: 0; text-shadow: 2px 2px #000; font-size:7em;}
 
 .nav-bar
 {
