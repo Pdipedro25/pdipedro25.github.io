@@ -2,12 +2,19 @@
 Base styles
 ------------------------*/
 
+/*
+PALETTE GREYS: https://www.color-hex.com/color-palette/74694
+PALETTE ORANGE: https://www.color-hex.com/color-palette/74390
+
+
+*/
+
 body
 {
 	margin: 0;
 	padding: 0;
-	color: #333;
-	background-color: #eee;
+	color: #2d2d2d;
+	background-color:#2d2d2d;
 	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
@@ -35,7 +42,7 @@ blockquote
 {
 	padding: 1em 2em;
 	margin: 0 0 2em;
-	border-left: 5px solid #eee;
+	border-left: 5px solid #3a3a3a;
 }
 
 hr
@@ -44,7 +51,7 @@ hr
 	margin-top: 1em;
 	margin-bottom: 2em;
 	border: 0;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #3a3a3a;
 }
 
 table
@@ -52,7 +59,7 @@ table
 	background-color: transparent;
 	border-spacing: 0;
 	border-collapse: collapse;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #3a3a3a;
 }
 
 th, td
@@ -60,14 +67,14 @@ th, td
 	padding: .5em 1em;
 	vertical-align: top;
 	text-align: left;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #3a3a3a;
 }
 
-a:link { color: royalblue; }
-a:visited { color: purple; }
+a:link { color: #f95c5c; }
+a:visited { color: #ff975e; }
 a:focus { color: black; }
-a:hover { color: green; }
-a:active { color: red; }
+a:hover { color: #ff7f54; }
+a:active { color: #ff7f54; }
 
 /* -----------------------
 Layout styles
@@ -81,16 +88,16 @@ Layout styles
 
 .header
 {
-	color: #fff;
-	background: #333;
+	color: #71777d;
+	background: #1c1c1c;
 	padding: 1em 1.25em;
 }
 
-.header-heading { margin: 0; text-shadow: 2px 2px #000; font-size:7em;}
+.header-heading {margin: 0; text-shadow: 2px 2px #000; font-size:7em;}
 
 .nav-bar
 {
-	background: #000;
+	background: #242424;
 	padding: 0;
 }
 
@@ -98,18 +105,21 @@ Layout styles
 {
 	overflow: hidden;
 	padding: 1em 1.25em;
-	background-color: #fff;
+	background-color: #2d2d2d;
 }
 
 .main, .aside
 {
 	margin-bottom: 1em;
+	background-color:#2d2d2d;
+	color:#71777d
+
 }
 
 .footer
 {
-	color: #fff;
-	background: #000;
+	color: #71777d;
+	background: #242424;
 	padding: 1em 1.25em;
 }
 
@@ -132,32 +142,37 @@ Nav
 
 .nav a
 {
+	text-decoration: none;
 	display: block;
 	padding: .7em 1.25em;
-	color: #fff;
-	text-decoration: none;
-	border-bottom: 1px solid gray;
+	color: #71777d;
+	border-bottom: 1px solid #3a3a3a;
 }
 
-.nav a:link { color: white; }
-.nav a:visited { color: white; }
+.nav a:link { color: #71777d; }
+.nav a:visited { color: #71777d; }
 
 .nav a:focus
 {
 	color: black;
-	background-color: white;
+	background-color: #71777d;
 }
 
 .nav a:hover
 {
-	color: white;
-	background-color: green;
+	color: #ff7f54;
+}
+
+.nav a:hover::after
+{
+	color:#fff;
+	content:' !!';
 }
 
 .nav a:active
 {
-	color: white;
-	background-color: red;
+	color: #71777d;
+	background-color: #ff7f54;
 }
 
 /* -----------------------
@@ -168,9 +183,9 @@ Single styles
 
 .btn
 {
-	color: #fff !important;
-	background-color: royalblue;
-	border-color: #222;
+	color: #71777d !important;
+	background-color: #f95c5c;
+	border-color: #3a3a3a;
 	display: inline-block;
 	padding: .5em 1em;
 	margin-bottom: 0;
@@ -180,27 +195,27 @@ Single styles
 	white-space: nowrap;
 	vertical-align: middle;
 	cursor: pointer;
-	border: 1px solid transparent;
+	border: 1px solid #3a3a3a;
 	border-radius: .2em;
 	text-decoration: none;
 }
 
 .btn:hover
 {
-	color: #fff !important;
-	background-color: green;
+	color: #71777d !important;
+	background-color: #ff7f54;
 }
 
 .btn:focus
 {
-	color: #fff !important;
+	color: #71777d !important;
 	background-color: black;
 }
 
 .btn:active
 {
-	color: #fff !important;
-	background-color: red;
+	color: #71777d !important;
+	background-color: #ff7f54;
 }
 
 .table
@@ -269,4 +284,20 @@ Wide styles
 		padding: 0;
 		border-bottom: 0;
 	}
+}
+
+
+
+
+
+
+
+
+#random{
+  /* BOX MODEL */
+  
+  /* ENHANCEMENT */
+  background-color:#909090
+  background-position: left;
+  background-repeat: repeat;  
 }

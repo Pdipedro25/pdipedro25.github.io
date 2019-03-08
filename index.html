@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	
+	
+		<script type="text/javascript">
+	function randombg(){
+  var random= Math.floor(Math.random() * 6) + 0;
+  var bigSize = ["url(assets/img/bg/bg1.jpg)",
+                 "url(assets/img/bg/bg2.jpg)",
+                 "url(assets/img/bg/bg3.jpg)"];
+  document.getElementById("random").style.backgroundImage=bigSize[random];
+}
+
+	</script>
+	
 		<meta charset="utf-8">
 		<title>Two-column full width responsive layout</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +29,15 @@
 		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
 	<body>
-		<div class="header">
+	
+
+	
+	
+		<div id="random" class="header" onload="randombg()">
 			<div class="container">
-				<h1 class="header-heading">#25</h1>
+				<h1 class="header-heading"><span style="color:#ffa951;">#</span><span style="color:#ff975e;">2</span><span style="color:#ff7f54;">5</span></h1>
 			</div>
+
 		</div>
 		<div class="nav-bar">
 			<div class="container">
