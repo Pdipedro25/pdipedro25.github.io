@@ -160,13 +160,14 @@ Nav
 
 .nav a:hover
 {
+	text-decoration: underline;
 	color: #ff7f54;
 }
 
 .nav a:hover::after
 {
 	color:#fff;
-	content:' !!';
+	content:'!';
 }
 
 .nav a:active
