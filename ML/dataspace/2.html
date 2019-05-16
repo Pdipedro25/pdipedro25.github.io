@@ -14560,6 +14560,9 @@ Test Time = 0.43793582916259766
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert the variables of a dataset into a new set of variables which are linearly uncorrelated and called principal components. The principal components are ranked according to the variance of data along them. This technique can be used to reduce the dimensionality of the dataset by considering just the most important principal components.</p>
 <p>So basically, PCA is a procedure that convert each instance of the dataset into its <strong>principal components</strong>: the first principal component has the largest possible variance, while  the succeeding ones in turn has the highest variance possible under the constraint that it is orthogonal to the preceding components. Variance, informally, measures how far a set of values are spread out from their average value.
 So it, in short words, works as "summary" of the data designed to preserve the maximum informations possible with the dimensionality reduction choosen.</p>
+<p>Be <strong>$X$, matrix of the samples-vectors</strong> centered respect to the origin, with dimension $n*p$ where n = #samples, p= #features.</p>
+<p>$PCA\  Projection: Z_{i1}=w_{11}x_{i1}+w_{21}x_{i2}+...+w_{p1}x_{ip} $</p>
+<p>$PCA\  first\ weight\ vector: w_{1}= argmax_{\|w\|=1}\frac{1}{m}(\sum_{i=1}^{n}(w_{j1}x_{ij})^2) = argmax_{\|w\|=1}\frac{1}{m}(\sum_{i=1}^{n}(\underline w^T\underline x_{i})^2)$</p>
 <p>In order to reduce the dimensionality of a dataset $X$ with $n$ variables to a new dataset with $k$ variables using <strong>PCA</strong> the following steps have to be followed:</p>
 <ul>
 <li>standardize the data</li>
@@ -15389,9 +15392,18 @@ Test Time = 0.1966848373413086
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <strong>support vector machine</strong> is a generalization of a simple and intuitive classifier called the <strong>maximal margin classifier</strong>. Supposing that our data can be perfectly separated using a hyperplane, then there will in fact exist an infinite number of such hyperplanes. This is because a given separating hyperplane can usually be shifted a tiny bit up or down, or rotated, without coming into contact with any of the observations. The objective of the support vector machine algorithm is to find one hyperplane in an N-dimensional space(N — the number of features) that distinctly classifies the data points.</p>
 <p>In order to construct a classifier based upon a separating hyperplane, we must have a reasonable way to decide which of the infinite possible separating hyperplanes to use. A natural choice is the <strong>maximal margin hyperplane</strong> which is the separating hyperplane that is <em>farthest from the training observations</em>. The maximal margin hyperplane is the separating hyperplane for which the margin is largest.</p>
+<p><strong>Hyperplane</strong>: $w_0+w_1x_1+w_2x_2+\cdots+w_nx_n=0$</p>
 <p><strong>Support vectors</strong> are data points that are closer to the hyperplane and influence the position and orientation of the hyperplane. Using these support vectors, we maximize the margin of the classifier. Deleting the support vectors will change the position of the hyperplane. These are the points that help us build our SVM.</p>
 <p>In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces. Kernel methods, or kernel trick, owe their name to the use of kernel functions, which enable them to operate in a high-dimensional, implicit feature space without ever computing the coordinates of the data in that space, but rather by simply computing the inner products between the images of all pairs of data in the feature space. This operation is often computationally cheaper than the explicit computation of the coordinates. It allows to transform the linear hyperplane to fit an un-linear problem.</p>
 <p>We will use SVM in his linear version and using the RBF kernel function for an unlinear approach.</p>
+<p><strong>Optimization Problem for Hard Margin</strong>:
+$$\max_{w_0...w_p}M \ subject \  to: \\ \  \sum_{j=1}^{p}w_j^2=1 \\ y_i(w_0 + w_1x_{i1} + ... + w_px_{pi}) \geq M  \ \forall \ i=1..n $$</p>
+<p><strong>Optimization Problem for Soft Margin</strong>:
+$$\max_{w_0...w_p,e_0...e_p} M \ subject \  to: \\ \  \sum_{j=1}^{p}w_j^2=1 \\ y_i(w_0 + w_1x_{i1} + ... + w_px_{pi})\geq M(1-e_i)  \ \forall \ i=1..n \\ e_i \geq 0 \  \forall \ i=1..n \\ \sum_{i=1}^{n}e_i \geq C$$</p>
+<p><strong>Kernel Trick</strong>:
+\begin{equation}
+F(x_i) \cdot F(x_j) = k(x_i, x_j)
+\end{equation}</p>
 
 </div>
 </div>
@@ -15515,7 +15527,7 @@ Test Time = 0.06652545928955078
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="SVM-for-RBF-Kernel">SVM for RBF Kernel<a class="anchor-link" href="#SVM-for-RBF-Kernel">&#182;</a></h3><p>RBF Kernels allows, by the use of kernel trick, to transform the linear separator to make some curves and better fit the problem. The RBF Kernel equivalent to inner product is such defined:</p>
-$$RBF = exp(-\gamma \left || x-x_i \right || )$$
+$$RBF: \  K(x,x_i)= exp(-\gamma \left || x-x_i \right || )$$
 </div>
 </div>
 </div>
