@@ -92,7 +92,7 @@ h6 {
  * LINK STYLE
  *------------------------------------------*/
 a {
-    color              : #ff5722;
+    color              : #2d9c25;/*#ff5722;*/
     text-decoration    : none;
     -webkit-transition : all 0.3s ease 0s;
     -moz-transition    : all 0.3s ease 0s;
